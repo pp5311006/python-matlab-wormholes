@@ -33,11 +33,11 @@ Create a Wormhole object in your python session:
 This command will hang until you create the matlab end. In another shell:
 
 {{{
-   $ matlab -nodesktop
+   $ matlab
    >> open_wormhole
 }}}
 
-Send some data to matlab:
+(Note: if you use matlab -nodesktop, you may not be able to stop the open_wormhole function with Control-C, at least for 2010b). Send some data to matlab:
 
 {{{
    >>> import numpy as np
@@ -92,6 +92,10 @@ Retrieve variables from python session:
 
         1     2     3     4     5
 }}}
+
+= Close the connection =
+
+Use Control-C to terminate open_wormhole.py or the matlab function open_wormhole. Then you can create another Wormhole object and the port will be reused.
 
 = Comments =
 
